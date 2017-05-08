@@ -40,7 +40,7 @@ class DebugBar extends Object
             return self::$debugbar;
         }
 
-        if (!Director::isDev() || self::IsDisabled() || self::VendorNotInstalled() || self::NotLocalIp() || Director::is_cli() || self::IsDevUrl() || (self::IsAdminUrl() && !self::config()->enabled_in_admin)
+        if (self::IsDisabled() || self::VendorNotInstalled() || self::NotLocalIp() || Director::is_cli() || self::IsDevUrl() || (self::IsAdminUrl() && !self::config()->enabled_in_admin)
         ) {
             self::$debugbar = false; // No need to check again
             return;
